@@ -32,18 +32,28 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="88eadcdf-6c5d-49aa-bdba-dffa0c9dbbc2">
-      <console name="hello-world" type="STANDARD" schema="helloworld" session="Main"><![CDATA[CREATE TABLE MESSAGE(
+      <console name="hello-world" type="STANDARD" schema="bookstore" session="Main"><![CDATA[CREATE TABLE MESSAGE(
                         ID BIGINT(20) NOT NULL AUTO_INCREMENT,
                         TEXT VARCHAR(255) NULL DEFAULT NULL,
                         PRIMARY KEY (ID)
-                        
- );]]></console>
+
+ );
+
+select
+    m.ID,
+    m.`TEXT`
+from
+    MESSAGE m;
+
+
+select * from MESSAGE;]]></console>
     </connection>
   </component>
+  <component name="DBNavigator.Project.DatabaseEditorStateManager">
+    <last-used-providers />
+  </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="88eadcdf-6c5d-49aa-bdba-dffa0c9dbbc2" object-ref="schemas/helloworld/tables/message" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="88eadcdf-6c5d-49aa-bdba-dffa0c9dbbc2" />
@@ -58,6 +68,9 @@
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.FileConnectionMappingManager">
+    <mapping file-url="file://$PROJECT_DIR$/db/hello-world.sql" connection-id="88eadcdf-6c5d-49aa-bdba-dffa0c9dbbc2" session-id="MAIN" current-schema="" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -79,20 +92,22 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="88eadcdf-6c5d-49aa-bdba-dffa0c9dbbc2" active="true">
+      <connection id="88eadcdf-6c5d-49aa-bdba-dffa0c9dbbc2" active="true" signed="true">
         <database>
           <name value="hello-world" />
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
           <database-version value="8.0" />
-          <driver-source value="BUILTIN" />
+          <driver-source value="BUNDLED" />
           <driver-library value="" />
           <driver value="" />
           <url-type value="DATABASE" />
           <host value="localhost" />
           <port value="3306" />
           <database value="" />
+          <tns-folder value="" />
+          <tns-profile value="" />
           <type value="USER_PASSWORD" />
           <user value="root" />
           <deprecated-pwd value="cGFzc3dvcmQ=" />
@@ -133,7 +148,7 @@
           <alternative-statement-delimiter value="" />
         </details>
         <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
-          <object-type-filter use-master-settings="true">
+          <object-type-filter>
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
             <object-type name="ROLE" enabled="true" />
@@ -204,6 +219,7 @@
         <object-type name="FUNCTION" sorting-type="NAME" />
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
+        <object-type name="TYPE ATTRIBUTE" sorting-type="POSITION" />
       </sorting>
       <default-editors>
         <object-type name="VIEW" editor-type="SELECTION" />
@@ -250,11 +266,11 @@
         <nulls-first value="true" />
         <max-sorting-columns value="4" />
       </sorting>
-      <tracking-columns>
-        <columnNames value="" />
+      <audit-columns>
+        <column-names value="" />
         <visible value="true" />
         <editable value="false" />
-      </tracking-columns>
+      </audit-columns>
     </dataset-grid-settings>
     <dataset-editor-settings>
       <text-editor-popup>
